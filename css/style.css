@@ -245,26 +245,26 @@ textarea {
   }
 
 
-
-
-  /*my configuration*/
-  .custom-list {
-    list-style-type: none; /* убираем стандартные точки */
-    padding-left: 0;
-  }
-
-  .custom-list li::before {
-    content: "👉 "; /* свой символ */
-  }
-
-  .sub-list {
-    list-style-type: none;
-    padding-left: 0; /* отступ для вложенного списка */
-  }
-
-  .sub-list li::before {
-    content: "▶ "; /* символ для подпунктов */
-  }
-
 }
 
+
+/*my configuration*/
+.custom-list {
+  list-style-type: none; /* прибираємо стандартні крапки */
+  padding-left: 0;
+}
+
+.custom-list li::before {
+  content: "👉 ";
+}
+
+.sub-list {
+  list-style-type: none;
+  padding-left: 30px; /* робимо отступ */
+}
+
+.sub-list li::before {
+  content: "▶ ";
+}
+
+/*for form*/
