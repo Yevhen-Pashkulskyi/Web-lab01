@@ -4,13 +4,64 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Форма входу до особистого кабінету</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div>
-<div class="">
-
-</div>
+<div id="container">
+  <div class="flex items-center justify-center h-screen w-screen antialiased">
+    <div class="flex flex-col h-full">
+      <div class="flex-col flex-grow items-center flex justify-center xs:justify-start">
+        <div class="flex flex-col">
+          <div class="flex flex-col">
+            <div class="flex flex-row justify-between pb-6 xs:pt-4 xs:px-2">
+              <a href="index.html">
+                <img src="img/kyivstar-logo.jpg" width="135" height="32">
+              </a>
+              <div class="dropdown_dropdown__xdStp">
+                <select name="Option">
+                  <option value="v1">УКР</option>
+                  <option value="v1">English</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <h2>
+            <b>Вхід</b>
+          </h2>
+        </div>
+        <div>
+          <h3 class="text-1xl leading-normal leading-none">
+            Введіть номер телефону або рахунок Домашнього Інтернету
+          </h3>
+        </div>
+        <form>
+          <div>
+            <label>
+              Номер телефону або особовий рахунок
+            </label>
+            <input type="text">
+          </div>
+          <div class="flex flex-row flex-grow py-4 pb-8">
+            <button type="submit">
+              <span>Далі</span>
+            </button>
+          </div>
+        </form>
+        <footer class="footer_footer__ZK5Q_">
+          <div>
+            <a href="404.html"><span>Про нас</span></a>
+            <a href="404.html"><span>Конфіденційність</span></a>
+            <a href="404.html"><span>Підтримка</span></a>
+          </div>
+          <p>
+            © 1997–2025 ПрАТ «Київстар». Усі права захищено. Використання матеріалів цього сайту можливе тільки за умови
+            попередньої письмової згоди Київстар.
+          </p>
+        </footer>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
