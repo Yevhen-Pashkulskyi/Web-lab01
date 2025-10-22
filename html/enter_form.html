@@ -4,50 +4,52 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Форма входу до особистого кабінету</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<div id="container">
+<div>
   <div class="flex items-center justify-center h-screen w-screen antialiased">
     <div class="flex flex-col h-full">
       <div class="flex-col flex-grow items-center flex justify-center xs:justify-start">
-        <div class="flex flex-col">
           <div class="flex flex-col">
             <div class="flex flex-row justify-between pb-6 xs:pt-4 xs:px-2">
               <a href="index.html">
-                <img src="img/kyivstar-logo.jpg" width="135" height="32">
+                <img src="../img/kyivstar-logo.jpg" width="135" height="32">
               </a>
               <div class="dropdown_dropdown__xdStp">
                 <select name="Option">
                   <option value="v1">УКР</option>
-                  <option value="v1">English</option>
+                  <option value="v2">English</option>
                 </select>
               </div>
             </div>
+            <main class="shadow-lg bg-white rounded-xl p-8 max-w-md w-full">
+              <div>
+                <h2 class="font-bold leading-none text-3xl" >
+                  Вхід
+                </h2>
+              </div>
+              <div class="flex px-8 mb-6">
+                <h3 class="text-lg text-gray-600">
+                  Введіть номер телефону або рахунок Домашнього Інтернету
+                </h3>
+              </div>
+              <div>
+                <form>
+                  <div>
+                    <input class="mb-4" type="text" placeholder="Номер телефону або особовий рахунок">
+                  </div>
+                  <div class="flex flex-row flex-grow py-4 pb-8">
+                    <button type="submit">
+                      <span>Далі</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </main>
           </div>
-          <h2>
-            <b>Вхід</b>
-          </h2>
         </div>
-        <div>
-          <h3 class="text-1xl leading-normal leading-none">
-            Введіть номер телефону або рахунок Домашнього Інтернету
-          </h3>
-        </div>
-        <form>
-          <div>
-            <label>
-              Номер телефону або особовий рахунок
-            </label>
-            <input type="text">
-          </div>
-          <div class="flex flex-row flex-grow py-4 pb-8">
-            <button type="submit">
-              <span>Далі</span>
-            </button>
-          </div>
-        </form>
         <footer class="footer_footer__ZK5Q_">
           <div>
             <a href="404.html"><span>Про нас</span></a>
@@ -62,6 +64,6 @@
       </div>
     </div>
   </div>
-</div>
+
 </body>
 </html>
