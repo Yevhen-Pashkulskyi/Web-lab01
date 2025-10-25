@@ -323,6 +323,14 @@ textarea {
   line-height: 1;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.rounded-lg {
+  border-radius: .5rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: inherit;
@@ -357,8 +365,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dropdown_dropdown__xdStp .dropdown_selected__zGeLa {
-  display: flex
-;
+  display: flex;
   justify-content: flex-end;
   font-weight: 600;
   font-size: 12px;
@@ -394,17 +401,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/*.leading-normal {*/
-/*  line-height: 1.5;*/
-/*}*/
+.leading-normal {
+  line-height: 1.5;
+}
 
 
 
 
 input[type="text"] {
   width: 85%; /* Растянуть на всю ширину */
-  margin-top: 10px;
-  margin-left: 7.5%;
+  margin: 10px 7.5%;
   padding: 1rem; /* Внутренний отступ */
   border: 1px solid #e0e0e0; /* Тонкая серая рамка */
   border-radius: 8px; /* Скругление */
@@ -414,22 +420,24 @@ input[type="text"] {
 button[type="submit"] {
   width: 85%; /* Растянуть на всю ширину */
   padding: 1rem; /* Внутренний отступ */
-  margin-left: 7.5%;
+  margin:5px 7.5%;
   border: none; /* Убрать рамку */
   border-radius: 24px; /* Скругление */
   background-color: #f0f2f5; /* Светло-серый фон */
-  color: #000; /* Цвет текста (на картинке он темный, не белый) */
+  color: #555555; /* Цвет текста (на картинке он темный, не белый) */
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* Состояние неактивной кнопки (как на фото) */
+/* Состояние неактивной кнопки */
 button[type="submit"]:disabled {
   background-color: #f0f2f5;
   color: #a0a0a0;
 }
 
-main{
-  border-radius: 8px;
+button:hover {
+  background-color: #b3d4fc;
+  color: white;
+  opacity: max(1, 1);
 }
