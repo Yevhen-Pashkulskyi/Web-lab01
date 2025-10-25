@@ -394,15 +394,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-.leading-normal {
-  line-height: 1.5;
-}
+/*.leading-normal {*/
+/*  line-height: 1.5;*/
+/*}*/
 
 
-/* Добавьте это в ваш CSS */
+
 
 input[type="text"] {
-  width: 100%; /* Растянуть на всю ширину */
+  width: 85%; /* Растянуть на всю ширину */
+  margin-top: 10px;
+  margin-left: 7.5%;
   padding: 1rem; /* Внутренний отступ */
   border: 1px solid #e0e0e0; /* Тонкая серая рамка */
   border-radius: 8px; /* Скругление */
@@ -410,10 +412,11 @@ input[type="text"] {
 }
 
 button[type="submit"] {
-  width: 100%; /* Растянуть на всю ширину */
+  width: 85%; /* Растянуть на всю ширину */
   padding: 1rem; /* Внутренний отступ */
+  margin-left: 7.5%;
   border: none; /* Убрать рамку */
-  border-radius: 8px; /* Скругление */
+  border-radius: 24px; /* Скругление */
   background-color: #f0f2f5; /* Светло-серый фон */
   color: #000; /* Цвет текста (на картинке он темный, не белый) */
   font-size: 1rem;
@@ -425,4 +428,8 @@ button[type="submit"] {
 button[type="submit"]:disabled {
   background-color: #f0f2f5;
   color: #a0a0a0;
+}
+
+main{
+  border-radius: 8px;
 }
