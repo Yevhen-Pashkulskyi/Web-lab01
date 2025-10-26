@@ -249,6 +249,10 @@ textarea {
 
 
 /*my configuration*/
+body {
+  margin: 0;
+}
+
 .custom-list {
   list-style-type: none; /* прибираємо стандартні крапки */
   padding-left: 0;
@@ -296,6 +300,7 @@ textarea {
 .flex-row {
   flex-direction: row;
 }
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -406,8 +411,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-
 input[type="text"] {
   width: 85%; /* Растянуть на всю ширину */
   margin: 10px 7.5%;
@@ -420,7 +423,7 @@ input[type="text"] {
 button[type="submit"] {
   width: 85%; /* Растянуть на всю ширину */
   padding: 1rem; /* Внутренний отступ */
-  margin:5px 7.5%;
+  margin: 5px 7.5%;
   border: none; /* Убрать рамку */
   border-radius: 24px; /* Скругление */
   background-color: #f0f2f5; /* Светло-серый фон */
@@ -436,8 +439,28 @@ button[type="submit"]:disabled {
   color: #a0a0a0;
 }
 
+/*Состояние когда на кнопку навели мышей*/
 button:hover {
   background-color: #b3d4fc;
   color: white;
   opacity: max(1, 1);
+}
+
+/*увеличивает при наведении мышей*/
+.tr:hover {
+  transform: scale(1.2);
+}
+
+@keyframes shadow {
+  from {
+    text-shadow: 0 2px 5px dimgray;
+  }
+}
+
+/*псевдоклас для запуска анимации*/
+.shadow-pulse {
+  animation-name: shadow; /* Имя @keyframes-анимации */
+  animation-duration: 1.5s; /* Длительность */
+  animation-iteration-count: infinite; /* Повторять бесконечно */
+  animation-direction: alternate; /* Плавно "туда-обратно" (от тени к ее отсутствию) */
 }
