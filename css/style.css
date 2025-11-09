@@ -329,7 +329,8 @@ body {
 }
 
 .border {
-  border-width: 1px;
+  border-width: 2px;
+  border: #a3a0a0;
 }
 
 .rounded-lg {
@@ -494,3 +495,8 @@ button:hover {
 .mb-6 {
   margin-bottom: 1.5rem; /* 24px */
 }
+
+.kievstar-logo-width-form{
+  width: 85% ;
+}
+
