@@ -531,14 +531,13 @@ button:hover {
 }
 
 /*лаб №4*/
-
 body {
   margin: 0;
-  background-color: #f0f0f0; /* Фон для страницы */
+  background-color: #f0f0f0; /* Фон для ст */
 }
 
 .grid-container {
-  height: 80vh; /* Сетка на всю высоту экрана */
+  height: 100vh; /* Сетка на всю высоту экрана */
   display: grid;
 
   /* ОПРЕДЕЛЯЕМ СЕТКУ:
@@ -552,9 +551,9 @@ body {
   /* Создаем "рамки" с помощью свойства gap
     и фона самого контейнера
   */
-  gap: 2px;
+  gap: 1px;
   background-color: #000; /* Этот цвет будет виден как рамки */
-  border: 2px solid #000; /* Внешняя рамка */
+  border: 1px solid #000; /* Внешняя рамка */
   box-sizing: border-box; /* Чтобы border не влиял на размер */
 }
 
