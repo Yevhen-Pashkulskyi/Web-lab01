@@ -12,15 +12,8 @@ body {
   margin: 0;
 }
 
-/* Контейнер для центрування вмісту на сторінці */
-.container {
-  /*max-width: 1240px;*/
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-}
-
-.container_main {
+/* Контейнери */
+.container, .container_main {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
@@ -36,7 +29,7 @@ ul {
   list-style: none;
 }
 
-/* --- ВЕРХНЯ СІРА СМУГА (TOP BAR) --- */
+/* --- ВЕРХНЯ СІРА СМУГА --- */
 .top-bar {
   width: 100%;
   background-color: #f2f3f5;
@@ -63,13 +56,12 @@ ul {
   align-items: center;
 }
 
-.top-link:hover {
+.top-link:hover, .top-link.active {
   color: #141414;
 }
 
 .top-link.active {
   font-weight: 600;
-  color: #141414;
 }
 
 .location-link span {
@@ -88,15 +80,11 @@ ul {
   margin-left: 15px;
 }
 
-.login-btn span {
-  margin-right: 8px;
-}
-
 .login-btn:hover {
   background-color: #ffea73;
 }
 
-/* --- ГОЛОВНА БІЛА НАВІГАЦІЯ (MAIN HEADER) --- */
+/* --- ГОЛОВНА БІЛА НАВІГАЦІЯ --- */
 .main-header {
   width: 100%;
   background-color: #fff;
@@ -138,16 +126,15 @@ ul {
   color: #141414;
   transition: color 0.2s;
   white-space: nowrap;
+  cursor: pointer; /* Додаємо курсор-руку, бо це тепер кнопки */
 }
 
 .menu-list > li > a:hover {
   color: #0095eb;
 }
 
-/* --- CSS Стрілочка для випадаючих пунктів --- */
+/* --- СТРІЛОЧКИ (Вниз) --- */
 .has-dropdown > a {
-  /*display: flex;*/
-  /*align-items: center;*/
   padding-right: 25px !important;
 }
 
@@ -164,8 +151,8 @@ ul {
   transition: transform 0.2s, border-color 0.2s;
 }
 
-/* Поворот стрілки при наведенні */
-.has-dropdown:hover > a::after {
+/* Поворот стрілки при активному класі (додає JS) */
+.has-dropdown > a.active::after {
   transform: rotate(-135deg);
   margin-top: 2px;
   border-color: #0095eb;
@@ -182,18 +169,15 @@ ul {
   padding: 15px 0;
   border-radius: 0 0 8px 8px;
 
-  /* Приховування */
+  /* Приховано за замовчуванням */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.3s ease;
 }
 
-/* Відображення при наведенні */
-.menu-list > li:hover .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.dropdown li {
+  position: relative;
 }
 
 .dropdown li a {
@@ -209,41 +193,28 @@ ul {
   color: #0095eb;
 }
 
-.dropdown li {
-  position: relative;
-}
-
-/* 2. Стилі для самого випадаючого списку праворуч */
+/* --- ВКЛАДЕНЕ МЕНЮ (DROPRIGHT) --- */
 .dropright {
   position: absolute;
-  top: 0;           /* Вирівнюємо по верхньому краю батька */
-  left: 100%;       /* Зсуваємо вправо на 100% ширини батька */
+  top: 0;
+  left: 100%;
   background-color: #fff;
-  min-width: 240px; /* Ширина така ж, як у основного меню */
+  min-width: 240px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   padding: 15px 0;
-  border-radius: 0 8px 8px 8px; /* Трохи інші заокруглення */
+  border-radius: 0 8px 8px 8px;
 
-  /* Анімація появи (така ж, як у основного) */
+  /* Приховано за замовчуванням */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.3s ease;
 }
 
-/* 3. Логіка появи: при наведенні на li показуємо .dropright */
-.dropdown li:hover .dropright {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* --- Стрілочка вправо для пункту "Наші SIM-карти" --- */
-
-/* Робимо посилання флексом, щоб відсунути стрілку в кінець */
+/* --- Стрілочка вправо --- */
 .has-dropright > a {
   display: flex;
-  justify-content: space-between; /* Текст зліва, стрілка справа */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -253,18 +224,24 @@ ul {
   width: 6px;
   height: 6px;
   border-right: 2px solid #6e7782;
-  border-top: 2px solid #6e7782; /* Верхня і права межа створюють стрілку */
-  transform: rotate(45deg); /* Повертаємо, щоб вказувала вправо */
+  border-top: 2px solid #6e7782;
+  transform: rotate(45deg);
   margin-left: 10px;
   transition: border-color 0.2s;
 }
 
-/* При наведенні стрілка стає синьою */
-.has-dropright:hover > a::after {
+.has-dropright > a.active::after {
   border-color: #0095eb;
 }
 
-/* --- ПРАВІ КНОПКИ (ACTIONS) --- */
+/* --- КЛАС .SHOW (ДЛЯ ВІДКРИТТЯ МЕНЮ) --- */
+.dropdown.show, .dropright.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- ПРАВІ КНОПКИ --- */
 .header-actions {
   display: flex;
   align-items: center;
@@ -277,7 +254,6 @@ ul {
   color: #6e7782;
 }
 
-/* Кнопка "Поповнити" */
 .topup-btn {
   display: inline-block;
   border: 2px solid #0095eb;
