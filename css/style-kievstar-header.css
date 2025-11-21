@@ -1,0 +1,225 @@
+/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #141414;
+}
+
+/* Контейнер для центрування вмісту на сторінці */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- ВЕРХНЯ СІРА СМУГА (TOP BAR) --- */
+.top-bar {
+  background-color: #f2f3f5;
+  font-size: 14px;
+  border-bottom: 1px solid #e6e7e9;
+}
+
+.top-bar__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.top-bar__left, .top-bar__right {
+  display: flex;
+  align-items: center;
+}
+
+.top-link {
+  padding: 0 15px;
+  color: #6e7782;
+  display: flex;
+  align-items: center;
+}
+
+.top-link:hover {
+  color: #141414;
+}
+
+.top-link.active {
+  font-weight: 600;
+  color: #141414;
+}
+
+.location-link span {
+  margin-right: 5px;
+}
+
+/* Жовта кнопка "Увійти" */
+.login-btn {
+  display: flex;
+  align-items: center;
+  background-color: #ffd600; /* Жовтий колір */
+  color: #141414;
+  font-weight: 600;
+  height: 40px;
+  padding: 0 20px;
+  margin-left: 15px;
+}
+
+.login-btn span {
+  margin-right: 8px;
+}
+
+.login-btn:hover {
+  background-color: #ffea73;
+}
+
+/* --- ГОЛОВНА БІЛА НАВІГАЦІЯ (MAIN HEADER) --- */
+.main-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e6e7e9;
+  position: relative;
+  z-index: 100; /* Щоб меню було поверх контенту */
+}
+
+.main-header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* --- ГОЛОВНЕ МЕНЮ --- */
+.menu-list {
+  display: flex;
+  align-items: center;
+}
+
+.menu-list > li {
+  position: relative; /* Для позиціонування випадаючого меню */
+}
+
+.menu-list > li > a {
+  display: block;
+  padding: 0 15px;
+  line-height: 72px; /* Вирівнювання по висоті хедера */
+  font-size: 16px;
+  font-weight: 500;
+  color: #141414;
+  transition: color 0.2s;
+}
+
+.menu-list > li > a:hover {
+  color: #0095eb;
+}
+
+/* --- CSS Стрілочка для випадаючих пунктів --- */
+.has-dropdown > a {
+  display: flex;
+  align-items: center;
+  padding-right: 25px !important; /* Більше місця для стрілки */
+}
+
+.has-dropdown > a::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #6e7782;
+  border-bottom: 2px solid #6e7782;
+  transform: rotate(45deg);
+  margin-left: 8px;
+  margin-top: -4px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Поворот стрілки при наведенні */
+.has-dropdown:hover > a::after {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+  border-color: #0095eb;
+}
+
+/* --- ВИПАДАЮЧЕ МЕНЮ (DROPDOWN) --- */
+.dropdown {
+  position: absolute;
+  top: 100%; /* З'являється точно під пунктом меню */
+  left: 0;
+  background-color: #fff;
+  min-width: 240px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  border-radius: 0 0 8px 8px;
+
+  /* Приховування */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Відображення при наведенні */
+.menu-list > li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #141414;
+}
+
+.dropdown li a:hover {
+  background-color: #f2f3f5;
+  color: #0095eb;
+}
+
+/* --- ПРАВІ КНОПКИ (ACTIONS) --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 15px;
+  color: #6e7782;
+}
+
+/* Синя кнопка "Поповнити" */
+.topup-btn {
+  display: inline-block;
+  border: 2px solid #0095eb; /* Синя рамка */
+  color: #0095eb;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 24px; /* Заокруглені кути */
+  transition: background 0.2s, color 0.2s;
+}
+
+.topup-btn:hover {
+  background-color: #0095eb;
+  color: #fff;
+}
