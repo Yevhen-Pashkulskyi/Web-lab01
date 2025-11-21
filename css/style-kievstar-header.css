@@ -120,7 +120,7 @@ ul {
 .menu-list > li > a {
   display: block;
   padding: 0 15px;
-  line-height: 72px; /* Вирівнювання по висоті хедера */
+  line-height: 52px; /* Вирівнювання по висоті хедера */
   font-size: 16px;
   font-weight: 500;
   color: #141414;
@@ -135,7 +135,7 @@ ul {
 .has-dropdown > a {
   display: flex;
   align-items: center;
-  padding-right: 25px !important; /* Більше місця для стрілки */
+  padding-right: 15px !important; /* Більше місця для стрілки */
 }
 
 .has-dropdown > a::after {
