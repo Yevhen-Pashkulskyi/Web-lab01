@@ -13,11 +13,17 @@ body {
 }
 
 /* Контейнери */
-.container, .container_main {
+.container_main {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
+}
+.container {
+  /*max-width: 1240px; !* Обмежуємо ширину контенту *!*/
+  margin: 0 auto;    /* Центруємо блок (0 зверху, авто з боків) */
+  padding: 0 20px;   /* Відступи безпеки з боків */
+  width: 100%;       /* Займає всю доступну ширину до 1240px */
 }
 
 a {
