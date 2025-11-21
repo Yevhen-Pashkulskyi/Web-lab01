@@ -14,6 +14,13 @@ body {
 
 /* Контейнер для центрування вмісту на сторінці */
 .container {
+  /*max-width: 1240px;*/
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.container_main {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
@@ -95,7 +102,7 @@ ul {
   background-color: #fff;
   border-bottom: 1px solid #e6e7e9;
   position: relative;
-  z-index: 100; /* Меню поверх контенту */
+  z-index: 100;
 }
 
 .main-header__content {
@@ -118,7 +125,7 @@ ul {
 }
 
 .menu-list > li {
-  position: relative; /* Позиціонування випадаючого меню */
+  position: relative;
 }
 
 .menu-list > li > a {
@@ -130,6 +137,7 @@ ul {
   font-weight: 500;
   color: #141414;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .menu-list > li > a:hover {
@@ -199,6 +207,61 @@ ul {
 .dropdown li a:hover {
   background-color: #f2f3f5;
   color: #0095eb;
+}
+
+.dropdown li {
+  position: relative;
+}
+
+/* 2. Стилі для самого випадаючого списку праворуч */
+.dropright {
+  position: absolute;
+  top: 0;           /* Вирівнюємо по верхньому краю батька */
+  left: 100%;       /* Зсуваємо вправо на 100% ширини батька */
+  background-color: #fff;
+  min-width: 240px; /* Ширина така ж, як у основного меню */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  border-radius: 0 8px 8px 8px; /* Трохи інші заокруглення */
+
+  /* Анімація появи (така ж, як у основного) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* 3. Логіка появи: при наведенні на li показуємо .dropright */
+.dropdown li:hover .dropright {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- Стрілочка вправо для пункту "Наші SIM-карти" --- */
+
+/* Робимо посилання флексом, щоб відсунути стрілку в кінець */
+.has-dropright > a {
+  display: flex;
+  justify-content: space-between; /* Текст зліва, стрілка справа */
+  align-items: center;
+}
+
+.has-dropright > a::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #6e7782;
+  border-top: 2px solid #6e7782; /* Верхня і права межа створюють стрілку */
+  transform: rotate(45deg); /* Повертаємо, щоб вказувала вправо */
+  margin-left: 10px;
+  transition: border-color 0.2s;
+}
+
+/* При наведенні стрілка стає синьою */
+.has-dropright:hover > a::after {
+  border-color: #0095eb;
 }
 
 /* --- ПРАВІ КНОПКИ (ACTIONS) --- */
