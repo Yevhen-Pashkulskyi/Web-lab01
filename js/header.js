@@ -19,7 +19,7 @@ menuLinks.forEach(link => {
       this.classList.toggle('active');
     }
 
-    // 5. Закриваємо інші відкриті меню на цьому ж рівні (необов'язково, але гарно)
+    // 5. Закриваємо інші відкриті меню на цьому ж рівні
     const parentUl = this.closest('ul');
     if (parentUl) {
       const allSubmenusInThisLevel = parentUl.querySelectorAll('.show');
