@@ -1,87 +1,72 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вхід - Київстар</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вхід — Київстар</title>
+  <link rel="stylesheet" href="../css/form-style.css" />
 </head>
 <body>
 
-<div class="page-wrapper">
+<div class="container">
 
-  <!-- Хедер з логотипом та мовою -->
-  <header class="auth-header">
-    <div class="auth-header__content">
-      <a href="#" class="logo">
-        <!-- Заглушка логотипу -->
-        <span style="color:#0095eb; font-weight:bold; font-size: 24px;">KYIVSTAR</span>
-      </a>
-      <div class="lang-switcher">
-        <select name="lang">
-          <option value="uk">УКР</option>
-          <option value="en">ENG</option>
-        </select>
-      </div>
+  <header class="header">
+    <div class="logo">
+      <img src="https://www.kyivstar.ua/img/kyivstar-logo-blue.svg" alt="Київстар">
     </div>
+    <select id="langSelect">
+      <option value="uk">УКР</option>
+      <option value="en">ENG</option>
+    </select>
   </header>
 
-  <!-- Основний блок форми -->
-  <main class="auth-card">
-    <h1 class="auth-title">Вхід</h1>
+  <div class="card">
 
-    <!-- КРОК 1: Введення номеру (Видимий за замовчуванням) -->
-    <div id="step-1">
-      <p class="auth-subtitle">Введіть номер телефону або особовий рахунок</p>
-      <form id="loginFormStep1">
-        <div class="input-group">
-          <input type="text" id="phoneInput" placeholder="Номер телефону або особовий рахунок" required>
-        </div>
-        <button type="submit" class="submit-btn" id="nextBtn" disabled>Далі</button>
-      </form>
+    <!-- Крок 1: Номер телефону -->
+    <div id="step1">
+      <h1>Вхід</h1>
+      <p class="subtitle">Введіть номер телефону або рахунок Домашнього Інтернету</p>
+
+      <input type="text" id="phoneInput" placeholder="Номер телефону або особовий рахунок" maxlength="19" autocomplete="off">
+
+      <button id="nextBtn" disabled>Далі</button>
     </div>
 
-    <!-- КРОК 2: Введення паролю та таймер (Прихований) -->
-    <div id="step-2" style="display: none;">
-      <p class="auth-subtitle">
-        Введіть пароль, який надійшов в SMS на номер <span id="userPhoneDisplay" style="font-weight: bold;"></span>
-      </p>
+    <!-- Крок 2: SMS-код -->
+    <div id="step2" class="hidden">
+      <h1>Вхід</h1>
+      <p class="subtitle">Вхід за номером <span id="displayPhone"></span></p>
 
-      <form id="loginFormStep2">
-        <div class="input-group password-group">
-          <input type="password" id="passwordInput" placeholder="Пароль" required>
-          <!-- Іконка ока (спрощено) -->
-          <button type="button" class="toggle-password" id="togglePassword">👁️</button>
-        </div>
+      <div class="phone-display">
+        SMS-код надіслано на номер <span id="maskedPhone"></span><br>
+        Термін дії коду — 3 хв.
+      </div>
 
-        <!-- Блок таймера -->
-        <div class="timer-container">
-          <p>Надіслати код повторно через <span id="timer">03:00</span></p>
-        </div>
+      <input type="text" id="smsInput" placeholder="Код із SMS" maxlength="6" autocomplete="off">
 
-        <button type="submit" class="submit-btn" id="loginBtn" disabled>Увійти</button>
-      </form>
+      <label class="checkbox-label">
+        <input type="checkbox" id="rememberMe">
+        <span>Запам'ятати мене</span>
+      </label>
 
-      <button type="button" class="back-btn" id="backBtn">Змінити номер</button>
+      <button id="loginBtn" disabled>Далі</button>
+
+      <div class="resend" id="resendTimer">Надіслати код повторно через 0:55</div>
     </div>
 
-  </main>
-
-  <!-- Футер -->
-  <footer class="auth-footer">
-    <div class="footer-links">
-      <a href="#">Про нас</a>
-      <a href="#">Конфіденційність</a>
-      <a href="#">Підтримка</a>
-    </div>
-    <p class="copyright">
-      © 1997–2025 ПрАТ «Київстар». Усі права захищено. Використання матеріалів цього сайту можливе тільки за умови попередньої письмової згоди Київстар.
-    </p>
-  </footer>
+  </div>
 
 </div>
 
-<script src="js/script.js"></script>
+<footer class="footer">
+  <div class="links">
+    <a href="#">Про нас</a>
+    <a href="#">Конфіденційність</a>
+    <a href="#">Підтримка</a>
+  </div>
+  <p>© 1997–2025 ПрАТ «Київстар». Усі права захищено.</p>
+</footer>
 
+<script src="../js/js-form.js.js"></script>
 </body>
 </html>
