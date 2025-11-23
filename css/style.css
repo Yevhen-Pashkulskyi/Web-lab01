@@ -617,3 +617,159 @@ body {
 /* Колонка 9 (3 окремі комірки) */
 .item-c9-r3 { grid-column: 9; grid-row: 3 / 6; }
 
+/*lab-07*/
+
+/* --- 1. БАЗОВІ НАЛАШТУВАННЯ --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f3f4f6; /* Світлий фон всієї сторінки */
+  color: #141414;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- 2. КОНТЕЙНЕР (Центрування) --- */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* --- 3. HEADER (ШАПКА) --- */
+.top-bar {
+  width: 100%;
+  background-color: #f2f3f5;
+  font-size: 14px;
+  border-bottom: 1px solid #e6e7e9;
+}
+.top-bar__content {
+  display: flex; justify-content: space-between; align-items: center; height: 40px;
+}
+.top-bar__left, .top-bar__right { display: flex; align-items: center; }
+.top-link { padding: 0 15px; color: #6e7782; display: flex; align-items: center; }
+.top-link.active, .top-link:hover { color: #141414; font-weight: 600; }
+.login-btn {
+  display: flex; align-items: center; background-color: #ffd600; color: #141414;
+  font-weight: 600; height: 40px; padding: 0 20px; margin-left: 15px;
+}
+
+.main-header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e7e9;
+  position: relative; z-index: 100;
+}
+.main-header__content {
+  display: flex; align-items: center; justify-content: space-between; height: 72px;
+}
+.logo { margin-right: 40px; display: flex; align-items: center; }
+
+/* МЕНЮ */
+.menu-list { display: flex; align-items: center; }
+.menu-list > li { position: relative; }
+.menu-list > li > a {
+  display: flex; align-items: center; height: 72px; padding: 0 15px;
+  font-size: 16px; font-weight: 500; color: #141414; white-space: nowrap; cursor: pointer;
+  transition: color 0.2s;
+}
+.menu-list > li > a:hover { color: #0095eb; }
+
+/* СТРІЛОЧКИ */
+.has-dropdown > a { padding-right: 25px !important; }
+.has-dropdown > a::after {
+  content: ''; display: inline-block; width: 8px; height: 8px;
+  border-right: 2px solid #6e7782; border-bottom: 2px solid #6e7782;
+  transform: rotate(45deg); margin-left: 8px; margin-top: -2px; transition: transform 0.2s;
+}
+.has-dropdown > a.active::after { transform: rotate(-135deg); margin-top: 2px; border-color: #0095eb; }
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute; top: 100%; left: 0; background-color: #fff; min-width: 240px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 15px 0; border-radius: 0 0 8px 8px;
+  opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease;
+}
+.dropdown li { position: relative; }
+.dropdown li a { display: block; padding: 10px 20px; height: auto; }
+.dropdown li a:hover { background-color: #f2f3f5; color: #0095eb; }
+
+/* DROPRIGHT */
+.dropright {
+  position: absolute; top: 0; left: 100%; background-color: #fff; min-width: 240px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 15px 0; border-radius: 0 8px 8px 8px;
+  opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease;
+}
+.has-dropright > a { display: flex; justify-content: space-between; }
+.has-dropright > a::after {
+  content: ''; display: inline-block; width: 6px; height: 6px;
+  border-right: 2px solid #6e7782; border-top: 2px solid #6e7782;
+  transform: rotate(45deg); margin-left: 10px;
+}
+
+/* КЛАС ДЛЯ ВІДКРИТТЯ МЕНЮ */
+.dropdown.show, .dropright.show { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* КНОПКИ ХЕДЕРА */
+.header-actions { display: flex; align-items: center; }
+.search-icon { font-size: 20px; padding: 10px; margin-right: 15px; color: #6e7782; }
+.topup-btn {
+  display: inline-block; border: 2px solid #0095eb; color: #0095eb; font-weight: 600;
+  padding: 10px 24px; border-radius: 24px; transition: all 0.2s;
+}
+.topup-btn:hover { background-color: #0095eb; color: #fff; }
+
+
+/* --- 4. ФОРМА АВТОРИЗАЦІЇ (AUTH CARD) --- */
+.page-content {
+  display: flex; justify-content: center; padding-top: 60px; padding-bottom: 60px;
+}
+
+.auth-card {
+  background: #fff;
+  width: 100%; max-width: 480px; /* Ширина картки як в оригіналі */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.auth-title { font-size: 32px; margin-bottom: 16px; font-weight: 700; }
+.auth-subtitle { color: #6e7782; margin-bottom: 24px; line-height: 1.5; }
+
+.input-wrapper { margin-bottom: 24px; position: relative; }
+.input-wrapper input {
+  width: 100%; padding: 14px 16px; font-size: 16px;
+  border: 1px solid #e6e7e9; border-radius: 8px; outline: none; transition: 0.2s;
+}
+.input-wrapper input:focus { border-color: #0095eb; }
+
+/* Око для пароля */
+.password-wrapper { display: flex; align-items: center; }
+.eye-btn {
+  position: absolute; right: 15px; background: none; border: none; cursor: pointer; font-size: 18px;
+}
+
+/* Основна кнопка */
+.btn-primary {
+  width: 100%; padding: 14px; border: none; border-radius: 8px;
+  background-color: #e6e7e9; color: #9fa5ac; /* Сіра (неактивна) */
+  font-size: 16px; font-weight: 600; cursor: not-allowed; transition: 0.3s;
+}
+.btn-primary.active {
+  background-color: #0095eb; color: #fff; cursor: pointer;
+}
+.btn-primary.active:hover { background-color: #0077bd; }
+
+/* Кнопка "Змінити номер" */
+.btn-link {
+  display: block; width: 100%; margin-top: 20px; background: none; border: none;
+  color: #0095eb; font-size: 14px; font-weight: 500; cursor: pointer;
+}
+.btn-link:hover { text-decoration: underline; }
+
+/* Таймер */
+.timer-box {
+  font-size: 14px; color: #6e7782; text-align: center; margin-bottom: 20px;
+}
+#timer { font-weight: 600; color: #141414; }
