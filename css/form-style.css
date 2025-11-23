@@ -1,157 +1,159 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;                    /* Скидає зовнішні відступи для всіх елементів */
+  padding: 0;                   /* Скидає внутрішні відступи для всіх елементів */
+  box-sizing: border-box;       /* Включає padding і border у загальну ширину/висоту елемента (дуже важливо для коректного розміщення) */
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #f8f9fa;
-  color: #141414;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Сучасний системний шрифт (як на офіційному сайті Київстар) */
+  background: #f8f9fa;          /* Світло-сірий фон сторінки */
+  color: #141414;               /* Темно-сірий колір тексту за замовчуванням */
+  min-height: 100vh;            /* Займає всю висоту екрану (viewport height) */
+  display: flex;                /* Включає Flexbox для body */
+  flex-direction: column;       /* Елементи розташовуються вертикально (header → основна частина → footer) */
 }
 
 .container {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: 480px;             /* Максимальна ширина контенту — 480 пікселів (як на мобільній версії) */
+  margin: 0 auto;               /* Центрує контейнер по горизонталі */
+  padding: 20px;                /* Відступи з усіх боків по 20px */
+  flex: 1;                      /* Дозволяє контейнеру займати весь доступний простір між header і footer */
+  display: flex;                /* Включає Flexbox всередині контейнера */
+  flex-direction: column;       /* Вміст розташовується вертикально */
+  justify-content: center;      /* Центрує вміст по вертикалі (форма по центру екрану) */
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
+  display: flex;                /* Розташовує логотип і вибір мови в один рядок */
+  justify-content: space-between; /* Логотип зліва, селект мови — справа */
+  align-items: center;          /* Вирівнює по вертикалі (по центру) */
+  margin-bottom: 40px;          /* Відступ знизу перед формою */
 }
 
 .logo img {
-  height: 48px;
+  height: 48px;                 /* Фіксує висоту логотипу (ширина підлаштовується автоматично) */
 }
 
 #langSelect {
-  background: transparent;
-  border: none;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  cursor: pointer;
+  background: transparent;      /* Прозорий фон у випадаючого списку */
+  border: none;                 /* Прибирає стандартну рамку */
+  font-weight: 600;             /* Напівжирний текст */
+  font-size: 14px;              /* Розмір шрифту */
+  text-transform: uppercase;   /* Всі букви великі (УКР / ENG) */
+  cursor: pointer;              /* Курсор у вигляді руки при наведенні */
 }
 
 .card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  padding: 40px 32px;
-  text-align: center;
+  background: white;            /* Білий фон картки */
+  border-radius: 16px;          /* Закруглені кути */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Тінь для ефекту піднятості */
+  padding: 40px 32px;           /* Внутрішні відступи: 40px зверху/знизу, 32px з боків */
+  text-align: center;           /* Вирівнює весь текст по центру (але ми пізніше перевизначимо для h1 і p) */
 }
 
 h1 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-size: 32px;              /* Великий заголовок "Вхід" */
+  font-weight: 700;             /* Жирний шрифт */
+  margin-bottom: 12px;          /* Відступ знизу перед підзаголовком */
+  text-align: left;             /* Текст починається зліва (як на справжньому сайті) */
 }
 
 .subtitle {
-  color: #6e7782;
-  margin-bottom: 32px;
-  font-size: 16px;
-  line-height: 1.5;
+  color: #6e7782;               /* Сірий колір підзаголовка */
+  margin-bottom: 32px;          /* Великий відступ перед полем вводу */
+  font-size: 16px;              /* Розмір тексту */
+  line-height: 1.5;             /* Міжрядковий інтервал для кращої читабельності */
+  text-align: left;             /* Текст зліва, а не по центру */
 }
 
 input {
-  width: 100%;
-  padding: 16px;
-  border: 1px solid #d1d5db;
-  border-radius: 12px;
-  font-size: 16px;
-  margin-bottom: 24px;
-  transition: all 0.2s;
+  width: 100%;                  /* Поле вводу на всю ширину */
+  padding: 16px;                /* Внутрішні відступи для зручного введення */
+  border: 1px solid #d1d5db;     /* Тонка сіра рамка */
+  border-radius: 12px;          /* Закруглені кути */
+  font-size: 16px;              /* Розмір тексту всередині поля */
+  margin-bottom: 24px;          /* Відступ знизу до наступного елемента */
+  transition: all 0.2s;         /* Плавна анімація при фокусі */
 }
 
 input:focus {
-  outline: none;
-  border-color: #0095eb;
-  box-shadow: 0 0 0 3px rgba(0,149,235,0.15);
+  outline: none;                /* Прибирає стандартну синю обводку при фокусі */
+  border-color: #0095eb;        /* Синя рамка при введенні */
+  box-shadow: 0 0 0 3px rgba(0,149,235,0.15); /* Легка синя тінь — фірмовий стиль Київстар */
 }
 
 button {
-  width: 100%;
-  padding: 16px;
-  background: #c8d1db;
-  color: #6e7782;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: not-allowed;
-  transition: all 0.3s;
+  width: 100%;                  /* Кнопка на всю ширину */
+  padding: 16px;                /* Висота кнопки */
+  background: #c8d1db;          /* Сірий фон (неактивна кнопка) */
+  color: #6e7782;               /* Сірий текст */
+  border: none;                 /* Без рамки */
+  border-radius: 30px;          /* Дуже закруглені кути (як таблетка) */
+  font-size: 16px;              /* Розмір тексту */
+  font-weight: 600;             /* Напівжирний */
+  cursor: not-allowed;          /* Курсор "заборонено" коли кнопка неактивна */
+  transition: all 0.3s;         /* Плавна зміна кольору при активації */
 }
 
 button:not(:disabled) {
-  background: #0095eb;
-  color: white;
-  cursor: pointer;
+  background: #0095eb;          /* Синій фон, коли кнопка активна */
+  color: white;                 /* Білий текст */
+  cursor: pointer;              /* Курсор-рука */
 }
 
 button:not(:disabled):hover {
-  background: #007cc7;
+  background: #007cc7;          /* Темніший синій при наведенні */
 }
 
 .hidden {
-  display: none;
+  display: none;                /* Приховує крок 2 (SMS-код) на початку */
 }
 
 .phone-display {
-  background: #e6f4ff;
-  padding: 16px;
-  border-radius: 12px;
-  margin: 20px 0 24px;
-  font-size: 15px;
-  color: #141414;
-  line-height: 1.5;
+  background: #e6f4ff;          /* Блакитний фон блоку з повідомленням про SMS */
+  padding: 16px;                /* Внутрішні відступи */
+  border-radius: 12px;          /* Закруглені кути */
+  margin: 20px 0 24px;          /* Відступи зверху і знизу */
+  font-size: 15px;              /* Розмір тексту */
+  color: #141414;               /* Темний текст */
+  line-height: 1.5;             /* Міжрядковий інтервал */
 }
 
 .checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 15px;
-  margin: 24px 0;
-  cursor: pointer;
-  justify-content: flex-start;
+  display: flex;                /* Розташовує чекбокс і текст в один рядок */
+  align-items: center;          /* Вирівнює по вертикалі */
+  gap: 12px;                    /* Відстань між чекбоксом і текстом */
+  font-size: 15px;              /* Розмір тексту */
+  margin: 24px 0;               /* Відступи зверху і знизу */
+  cursor: pointer;              /* Курсор-рука при наведенні на весь рядок */
+  justify-content: flex-start;  /* Текст починається зліва */
 }
 
 .checkbox-label input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  accent-color: #0095eb;
+  width: 20px;                  /* Розмір чекбокса */
+  height: 20px;                 /* Квадратний */
+  accent-color: #0095eb;        /* Синій колір галочки (фірмовий колір Київстар) */
 }
 
 .resend {
-  color: #6e7782;
-  font-size: 14px;
-  margin-top: 16px;
+  color: #6e7782;               /* Сірий колір тексту таймера */
+  font-size: 14px;              /* Дрібний текст */
+  margin-top: 16px;             /* Відступ зверху */
 }
 
 .footer {
-  text-align: center;
-  padding: 30px 20px;
-  color: #6e7782;
-  font-size: 13px;
+  text-align: center;           /* Вирівнює футер по центру */
+  padding: 30px 20px;           /* Відступи всередині футера */
+  color: #6e7782;               /* Сірий колір тексту */
+  font-size: 13px;              /* Дрібний текст */
 }
 
 .links a {
-  color: #0095eb;
-  text-decoration: none;
-  margin: 0 12px;
+  color: #0095eb;               /* Синій колір посилань (як у Київстар) */
+  text-decoration: none;        /* Прибирає підкреслення */
+  margin: 0 12px;               /* Відступи між посиланнями */
 }
 
 .links a:hover {
-  text-decoration: underline;
+  text-decoration: underline;  /* Підкреслення при наведенні */
 }

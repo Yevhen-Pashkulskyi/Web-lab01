@@ -1,74 +1,79 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!DOCTYPE html>                                <!-- Вказує браузеру, що це HTML5-документ -->
+<html lang="uk">                               <!-- Мова сторінки — українська (для SEO та доступності) -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Вхід — Київстар</title>
-  <link rel="stylesheet" href="../css/form-style.css" />
+  <meta charset="UTF-8" />                     <!-- Кодування символів — UTF-8 (підтримує кирилицю) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Адаптація під мобільні пристрої: ширина = ширина екрану, масштаб 100% -->
+  <title>Вхід — Київстар</title>               <!-- Заголовок вкладки браузера -->
+  <link rel="stylesheet" href="../css/form-style.css" /> <!-- Підключення зовнішнього файлу зі стилями (CSS) -->
 </head>
-<body>
+<body>                                         <!-- Початок видимої частини сторінки -->
 
-<div class="container">
+<div class="container">                        <!-- Основний контейнер — обмежує ширину контенту та центрує його -->
 
-  <header class="header">
-    <div class="logo">
-      <a href="../index.html">
-      <img src="../img/kyivstar-logo_135x90.jpg" width="135" height="90" alt="Київстар">
+  <header class="header">                      <!-- Шапка сторінки (логотип + вибір мови) -->
+    <div class="logo">                         <!-- Блок з логотипом -->
+      <a href="../index.html">                 <!-- Посилання на головну сторінку -->
+        <img src="../img/Kyivstar_logo.svg" width="135" height="90" alt="Київстар"> <!-- Логотип компанії (SVG — чіткий на будь-якому розмірі) -->
       </a>
     </div>
-    <select id="langSelect">
-      <option value="uk">УКР</option>
-      <option value="en">ENG</option>
+    <select id="langSelect">                   <!-- Випадаючий список для вибору мови -->
+      <option value="uk">УКР</option>          <!-- Варіант: українська мова (вибраний за замовчуванням) -->
+      <option value="en">ENG</option>          <!-- Варіант: англійська мова -->
     </select>
   </header>
 
-  <div class="card">
+  <div class="card">                           <!-- Основна "картка" з формою входу (білий блок з тінню) -->
 
-    <!-- Крок 1: Номер телефону -->
-    <div id="step1">
-      <h1>Вхід</h1>
-      <p class="subtitle">Введіть номер телефону або рахунок Домашнього Інтернету</p>
+    <!-- Крок 1: Введення номера телефону або рахунку -->
+    <div id="step1">                           <!-- Перший крок — видимий при завантаженні -->
+      <h1>Вхід</h1>                            <!-- Головний заголовок сторінки -->
+      <p class="subtitle">Введіть номер телефону або рахунок Домашнього Інтернету</p> <!-- Підказка користувачу -->
 
-      <input type="text" id="phoneInput" placeholder="Номер телефону або особовий рахунок" maxlength="19" autocomplete="off">
+      <!-- Поле для введення номера -->
+      <!-- Підказка всередині поля -->
+      <!-- Максимум 19 символів (для +380 (XX) XXX XX XX) -->
+      <!-- Вимикає автозаповнення браузера -->
+      <input type="text" id="phoneInput" placeholder="Номер телефону або особовий рахунок" maxlength="19"  autocomplete="off">
 
-      <button id="nextBtn" disabled>Далі</button>
+      <button id="nextBtn" disabled>Далі</button> <!-- Кнопка переходу до наступного кроку (спочатку неактивна) -->
     </div>
 
-    <!-- Крок 2: SMS-код -->
-    <div id="step2" class="hidden">
-      <h1>Вхід</h1>
-      <p class="subtitle">Вхід за номером <span id="displayPhone"></span></p>
+    <!-- Крок 2: Введення SMS-коду -->
+    <div id="step2" class="hidden">            <!-- Другий крок — спочатку прихований (через клас .hidden) -->
+      <h1>Вхід</h1>                            <!-- Заголовок повторюється — як на справжньому сайті -->
+      <p class="subtitle">Вхід за номером <span id="displayPhone"></span></p> <!-- Текст + місце для вставки номера через JS -->
 
-      <div class="phone-display">
-        SMS-код надіслано на номер <span id="maskedPhone"></span><br>
-        Термін дії коду — 3 хв.
+      <div class="phone-display">              <!-- Блакитний блок з інформацією про відправку SMS -->
+        SMS-код надіслано на номер <span id="maskedPhone"></span><br> <!-- Замаский номер (•• ••) вставляється через JS -->
+        Термін дії коду — 3 хв.               <!-- Додаткова інформація для користувача -->
       </div>
 
-      <input type="text" id="smsInput" placeholder="Код із SMS" maxlength="6" autocomplete="off">
+      <!-- Поле для введення 6-значного коду з SMS -->
+      <input type="text" id="smsInput" placeholder="Код із SMS" maxlength="6" autocomplete="off"><!-- Точно 6 цифр -->
 
-      <label class="checkbox-label">
-        <input type="checkbox" id="rememberMe">
-        <span>Запам'ятати мене</span>
+      <label class="checkbox-label">           <!-- Блок з чекбоксом "Запам'ятати мене" -->
+        <input type="checkbox" id="rememberMe"> <!-- Сам чекбокс -->
+        <span>Запам'ятати мене</span>          <!-- Текст поруч з чекбоксом -->
       </label>
 
-      <button id="loginBtn" disabled>Далі</button>
+      <button id="loginBtn" disabled>Далі</button> <!-- Кнопка входу (активується після введення 6 цифр) -->
 
-      <div class="resend" id="resendTimer">Надіслати код повторно через 0:55</div>
+      <div class="resend" id="resendTimer">Надіслати код повторно через 1:00</div> <!-- Таймер + посилання на повторну відправку -->
     </div>
 
-  </div>
+  </div> <!-- Кінець .card -->
 
-</div>
+</div> <!-- Кінець .container -->
 
-<footer class="footer">
-  <div class="links">
-    <a href="#">Про нас</a>
+<footer class="footer">                        <!-- Підвал сторінки -->
+  <div class="links">                          <!-- Блок з посиланнями -->
+    <a href="#">Про нас</a>                    <!-- Посилання (тимчасово на #) -->
     <a href="#">Конфіденційність</a>
     <a href="#">Підтримка</a>
   </div>
-  <p>© 1997–2025 ПрАТ «Київстар». Усі права захищено.</p>
+  <p>© 1997–2025 ПрАТ «Київстар». Усі права захищено.</p> <!-- Копірайт -->
 </footer>
 
-<script src="../js/js-form.js"></script>
+<script src="../js/js-form.js"></script>       <!-- Підключення JavaScript-файлу з логікою форми -->
 </body>
 </html>
